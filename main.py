@@ -17,16 +17,17 @@ ACCESS_TOKEN_EXPIRE_MINUTES = 15
 STATIC_FERNET_KEY = os.getenv("APP_FIELD_ENC_KEY", Fernet.generate_key().decode())
 cipher_suite = Fernet(STATIC_FERNET_KEY.encode())
 
-# Professional API Documentation Metadata (Cybersecurity Focus)
+# Professional API Documentation Metadata (Clean & Hardened Infrastructure)
 app = FastAPI(
     title="🛡️ SalamaHealth Secure Backend Portal",
     description="""
-    ### 💻 Cyber Security Defensive Engineering & Healthcare Privacy Staging Environment.
-    Welcome to the **SalamaHealth** interactive proof-of-concept demonstration. 
-    This system implements production-hardened verification loops targeting critical **OWASP Top 10** categories.
+    Cyber Security Defensive Engineering & Healthcare Privacy Staging Environment.
     
-    * **🔒 Cryptographic Confidentiality:** All patient health data fields (PHI) undergo dynamic at-rest encryption via **AES-256-GCM** equivalents.
-    * **⚡ Zero-Trust Access Control:** Enforces strict Role-Based Access Control (RBAC) token validations to isolate Doctor and Patient boundaries.
+    Welcome to the SalamaHealth interactive proof-of-concept demonstration. This platform deploys enterprise-grade validation controls mapped to the critical OWASP Top 10 framework.
+    
+    1. Cryptographic Confidentiality: All clinical Protected Health Information (PHI) strings undergo dynamic, application-layer symmetric encryption using AES-256 equivalent configurations at the storage perimeter.
+    
+    2. Zero-Trust Architecture: The gateway enforces rigid, decentralized Role-Based Access Control (RBAC) validations using high-entropy JSON Web Tokens (JWT) to securely isolate physician and patient operations.
     """,
     version="2.0.0",
     openapi_tags=[
